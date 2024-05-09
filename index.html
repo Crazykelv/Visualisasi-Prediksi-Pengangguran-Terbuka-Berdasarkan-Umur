@@ -8,25 +8,25 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        html{
+        scroll-behavior: smooth;
+        }
         *{
             font-family: "Poppins", sans-serif;
         }
+        
         </style>
 </head>
 <body class="bg-[#F0F0F2]">
-    <!-- <div>
-        <span>Data Ramalan</span>
-        <table id="DataRamalan" border="1"></table>
-    </div> -->
-    
-    <div class="mx-32 my-12">
-
+    <div class="mx-7 my-12">
+        <section id="past">
         <!-- SECTION NAVBAR -->
-    <div class="flex justify-between px-20 py-5 bg-[#7163BA] text-white font-medium text-2xl rounded-2xl shadow-2xl">
-        <h1 class="bg-[#5C5485] px-3 py-1 rounded-md">Peramalan Angka Pengangguran</h1>
+    <div class="flex sticky top-20 justify-between px-20 py-5 bg-[#7163BA] text-white font-medium text-2xl rounded-2xl shadow-2xl">
+        <a href="#" class="bg-[#5C5485] px-3 py-1 rounded-md">Peramalan Angka Pengangguran</a>
         <div class="flex gap-10">
-            <button class="bg-[#5C5485] px-3 py-1 rounded-md">Current</button>
-            <button class="bg-[#5C5485] px-3 py-1 rounded-md">Past</button>
+            <a href="#past" class="bg-[#5C5485] px-3 py-1 rounded-md">Past</a>
+            <a href="#current" class="bg-[#5C5485] px-3 py-1 rounded-md">Current</a>
+
         </div>
     </div>
         <!-- SECTION NAVBAR -->
@@ -41,10 +41,10 @@
         <!-- SECTION TABLE -->
 
         <!-- SECTION KURVA dan INPUT -->
-        <div class="flex gap-12">
-            <div class="bg-white px-5 py-10 rounded-xl flex flex-col gap-5" style="max-width: 1300px; margin: 0 auto;">
+        <div class="flex gap-10">
+            <div class="bg-white px-5 py-10 rounded-xl flex flex-col gap-5" style="max-width: 1500px; margin: 0 auto;">
                 <h1 class="bg-[#5C5485] px-5 py-2 rounded-xl text-xl font-semibold text-white text-center">Grafik Kurva</h1>
-                <canvas id="myChart" width="1900" height="1000"></canvas> <!-- Area untuk grafik -->
+                <canvas id="chartPengangguran" width="2600" height="1600"></canvas> <!-- Area untuk grafik -->
             </div>
             <div class="bg-white flex flex-col items-center px-5 py-10 gap-10 rounded-xl">
                 <h1 class="bg-[#5C5485] px-5 py-2 rounded-xl text-xl font-semibold text-white text-center w-full">Input I don't know :< </h1>
@@ -61,6 +61,36 @@
             </div>
         </div>
         <!-- SECTION KURVA dan INPUT -->
+    </section>
+        <!-- PAGE 2 -->
+        <!-- PAGE 2 -->
+        <!-- PAGE 2 -->
+        <section id="current">
+    <div class="bg-white my-20 rounded-xl py-10 px-5">
+        <div class="flex flex-col items-center justify-center gap-5">
+            <h1 class="bg-[#FF967C] px-5 py-2 rounded-xl text-3xl font-semibold text-white">Data Ramalan</h1>
+            <table class="border-2 border-[#2D3142] rounded-xl" id="DataRamalan" border="1"></table>
+        </div>    
+    </div>
+        <!-- SECTION TABLE -->
+
+        <!-- SECTION KURVA dan INPUT -->
+        <div class="flex gap-10">
+            <div class="bg-white px-5 py-10 rounded-xl flex flex-col gap-5" style="max-width: 1500px; margin: 0 auto;">
+                <h1 class="bg-[#FF967C] px-5 py-2 rounded-xl text-xl font-semibold text-white text-center">Grafik Kurva</h1>
+                <canvas id="chartRamalan" width="2600" height="1600"></canvas> <!-- Area untuk grafik -->
+            </div>
+            <div class="bg-white flex flex-col items-center px-5 py-10 gap-10 rounded-xl">
+                <h1 class="bg-[#FF967C] px-5 py-2 rounded-xl text-xl font-semibold text-white text-center w-full">Deskripsi</h1>
+                <div class="flex flex-col gap-10">
+                <div class="flex flex-col gap-5">
+                    <p class="text-gray-700">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam enim cum dolore in architecto. Aut neque modi saepe ea eligendi quod voluptatibus cupiditate error nobis accusamus rem dolore, nesciunt praesentium? Dolores fugit accusamus atque nobis, facilis quae dolor magni iste, libero aut itaque doloribus, quas sint odit modi earum aperiam.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- SECTION KURVA dan INPUT -->
+    </section>
 </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
