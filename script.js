@@ -48,7 +48,7 @@ fetch('data.xlsx')
     
 
 // Ini Data Ramalan
-    fetch('data.xlsx')
+fetch('data.xlsx')
     .then(response => response.arrayBuffer())
     .then(data => {
         const workbook = XLSX.read(data, { type: 'array' });
@@ -56,9 +56,44 @@ fetch('data.xlsx')
         const sheet = workbook.Sheets[sheetName];
         const htmlTable = XLSX.utils.sheet_to_html(sheet);
 
-        document.getElementById('DataRamalan').innerHTML = htmlTable;
-    })
-    .catch(error => console.error('Error fetching the file:', error));
+        // Membuat elemen div untuk manipulasi DOM
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = htmlTable;
+
+        // Mengatur gaya sebaris pada tabel
+        const table = tempDiv.querySelector('table');
+        if (table) {
+        table.style.border = "1px solid black"; // Border hitam pada tabel
+        table.style.width = "100%"; // Lebar penuh
+        }
+
+        // Mengatur gaya sebaris pada semua baris
+        const rows = tempDiv.querySelectorAll('tr');
+        rows.forEach((row) => {
+        row.style.borderBottom = "1px solid black"; // Border bawah hitam pada baris
+        });
+
+        // Mengatur gaya sebaris pada semua sel
+        const cells = tempDiv.querySelectorAll('td, th');
+        cells.forEach((cell) => {
+        cell.style.border = "1px solid black"; // Border hitam pada sel
+        cell.style.padding = "5px"; // Padding
+        });
+
+        // Memberi teks bold pada baris terakhir
+        const boldRows = [0, 1, 12]; // Indeks baris yang ingin kita buat bold
+
+        boldRows.forEach((index) => {
+        if (rows[index]) {
+            rows[index].querySelectorAll('td, th').forEach((cell) => {
+            cell.style.fontWeight = 'bold'; // Menjadikan teks tebal
+            });
+        }
+        });
+        document.getElementById('DataRamalan').innerHTML = tempDiv.innerHTML;
+
+        })
+        .catch(error => console.error('Error fetching the file:', error));
 
 
     // Curve
@@ -94,11 +129,11 @@ fetch('data.xlsx')
     const myChart2 = new Chart(ctx2, {
       type: 'line', // Jenis grafik adalah garis
       data: {
-        labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus'], // Label sumbu x
+        labels: ['15-19', '20-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54', '55-59', '60+'], // Label sumbu x
         datasets: [
           {
           label: 'Kurva Pengangguran',
-          data: [65, 59, 80, 81, 56, 55, 40, 90], // Data untuk sumbu y
+          data: [1133828, 2503245, 1343161, 755089, 649003, 525405, 458772, 402889, 281285, 198222], // Data untuk sumbu y
           borderColor: 'rgba(255, 150, 124, 1)', // Warna garis
           borderWidth: 2, // Lebar garis
           fill: false, // Apakah area di bawah garis akan diisi warna
