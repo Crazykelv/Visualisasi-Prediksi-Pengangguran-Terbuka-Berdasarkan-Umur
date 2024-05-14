@@ -105,10 +105,10 @@ fetch('data.xlsx')
         labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022'], // Label sumbu x
         datasets: [{
           label: 'Jumlah Pengangguran',
-          data: [7325914, 7195987, 7507794, 7027973, 7022792, 7018421, 7001610, 8346620, 8924030, 8414042], // Data untuk sumbu y
+          data: [7410931, 7244905, 7560822, 7031775, 7040323, 7073385, 7104424, 9767754, 9102052, 8425931], // Data untuk sumbu y
           borderColor: 'rgba(113, 99, 186, 1)', // Warna garis
           borderWidth: 2, // Lebar garis
-          fill: false, // Apakah area di bawah garis akan diisi warna
+          fill: true, // Apakah area di bawah garis akan diisi warna
           tension: 0.2, // Memberikan kelengkungan pada garis
           pointBackgroundColor: 'rgba(113, 99, 186, 1)', // Warna titik pada garis
         }]
@@ -129,25 +129,16 @@ fetch('data.xlsx')
     const myChart2 = new Chart(ctx2, {
       type: 'line', // Jenis grafik adalah garis
       data: {
-        labels: ['15-19', '20-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54', '55-59', '60+'], // Label sumbu x
+        labels: ['2022', 'Target', 'Target Prediksi', 'Prediksi'], // Label sumbu x
         datasets: [
           {
-          label: 'Kurva Pengangguran',
-          data: [1133828, 2503245, 1343161, 755089, 649003, 525405, 458772, 402889, 281285, 198222], // Data untuk sumbu y
+          label: 'Jumlah',
+          data: [8425931, 3.42484, 3.42484, 8250899], // Data untuk sumbu y
           borderColor: 'rgba(255, 150, 124, 1)', // Warna garis
           borderWidth: 2, // Lebar garis
-          fill: false, // Apakah area di bawah garis akan diisi warna
+          fill: true, // Apakah area di bawah garis akan diisi warna
           tension: 0.4, // Memberikan kelengkungan pada garis
           pointBackgroundColor: 'rgba(255, 150, 124, 1)', // Warna titik pada garis
-        },
-          {
-          label: 'Kurva Tambahan Misal',
-          data: [20, 22, 42, 81, 101, 50, 20, 10], // Data untuk sumbu y
-          borderColor: 'rgba(152, 255, 124, 1)', // Warna garis
-          borderWidth: 2, // Lebar garis
-          fill: false, // Apakah area di bawah garis akan diisi warna
-          tension: 0.4, // Memberikan kelengkungan pada garis
-          pointBackgroundColor: 'rgba(152, 255, 124, 1)', // Warna titik pada garis
         },
       ]
 
