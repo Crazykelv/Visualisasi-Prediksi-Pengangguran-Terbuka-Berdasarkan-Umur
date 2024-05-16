@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
         html{
         scroll-behavior: smooth;
         }
@@ -15,13 +16,27 @@
             font-family: "Poppins", sans-serif;
         }
         
+
+        .judul-berita{
+            font-family: 'Merriweather', serif;
+        }
+        .image-darken::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Latar belakang hitam dengan opacity */
+            z-index: 1; /* Pastikan ini berada di atas gambar tapi di bawah teks */
+        }
         </style>
 </head>
 <body class="bg-[#F0F0F2]">
     <div class="mx-7 my-12">
-        <section id="past">
+        <section id="hero">
         <!-- SECTION NAVBAR -->
-        <div class="flex sticky top-20 justify-between px-20 py-5 bg-[#7163BA] text-white font-medium text-2xl rounded-2xl shadow-2xl">
+        <div class="flex sticky top-20 justify-between px-20 py-5 bg-[#7163BA] text-white font-medium text-2xl rounded-2xl shadow-2xl z-50">
             <a href="#" class="bg-[#5C5485] px-3 py-1 rounded-md">Peramalan Angka Pengangguran</a>
             <div class="flex gap-10">
                 <a href="#past" class="bg-[#5C5485] px-3 py-1 rounded-md">Past</a>
@@ -31,8 +46,42 @@
         </div>
         <!-- SECTION NAVBAR -->
 
+        <div class="mb-16 mt-28 flex gap-10 justify-between">
+        <div class="bg-white flex justify-evenly w-full py-10 rounded-xl max-w-[1100px]">
+            <div>
+                <img src="https://mediaim.expedia.com/destination/1/1c25c882ca5bc7f3f8e3b75ca1e8462c.jpg" alt="thumbnail" class="rounded-xl w-[600px] h-[600px] object-cover">
+            </div>
+            <div class="max-w-[400px] flex flex-col justify-center gap-5 text-gray-700">
+                <span class=" text-gray-700">Sumber: <a target="_blank" href="https://finance.detik.com/berita-ekonomi-bisnis/d-7328803/ekonomi-jabar-triwulan-i-2024-tumbuh-4-93-pengangguran-turun-217-ribu">finance.detik.com</a></span>
+                <h1 class="judul-berita text-3xl text-black font-semibold">Ekonomi Jabar Triwulan I-2024 Tumbuh 4,93%, Pengangguran Turun 217 Ribu</h1>
+                <p class=" text-gray-700">Laju Pertumbuhan Ekonomi (LPE) Provinsi Jawa Barat tumbuh sebesar 4,93% (yoy) pada triwulan I-2024. Sementara itu, angka pengangguran di Jabar juga tercatat positif, turun cukup besar dalam satu tahun terakhir.</p>
+                <a class=" text-[#7163BA] flex items-center gap-3" href="https://finance.detik.com/berita-ekonomi-bisnis/d-7328803/ekonomi-jabar-triwulan-i-2024-tumbuh-4-93-pengangguran-turun-217-ribu" target="_blank">Baca selengkapnya... <img src="/Pictures/arrow.png" alt="arrow" width="25" height="25"></a>
+            </div>
+            </div>
+            <div class="flex flex-col gap-10 rounded-xl">
+                <div class=" bg-white w-full max-w-[700px] relative z-0 image-darken">
+                    <img src="https://akcdn.detik.net.id/community/media/visual/2024/05/15/gresik-job-fair_43.jpeg?w=700&q=90" class="w-[700px] h-[320px] object-cover" alt="thumbnail">
+                    <div class="absolute bottom-0 left-0 z-20 p-10 flex flex-col gap-5">
+                        <span class="text-gray-300">Sumber: <a target="_blank" href="https://www.detik.com/jatim/berita/d-7341872/tekan-angka-pengangguran-pemkab-gresik-buka-job-fair-2024">detik.com</a></span>
+                        <h1 class="judul-berita text-xl text-[#f3f6f4] font-semibold">Tekan Angka Pengangguran, Pemkab Gresik Buka Job Fair 2024</h1>
+                        <p class=" text-gray-300">Pemerintah Kabupaten Gresik terus berupaya menekan angka pengangguran di Kota Santri. Salah satunya, dengan menggelar Job Fair 2024 yang dilaksanakan Dinas Tenaga Kerja (Disnaker) Kabupaten Gresik.</p>
+                        <a class=" text-gray-300 flex items-center gap-3" target="_blank" href="https://www.detik.com/jatim/berita/d-7341872/tekan-angka-pengangguran-pemkab-gresik-buka-job-fair-2024">Baca selengkapnya... <img src="/Pictures/arrow.png" alt="arrow" width="25" height="25"></a>    
+                    </div>
+                </div>
+                <div class=" bg-white w-full max-w-[700px] relative z-0 image-darken">
+                    <img src="https://akcdn.detik.net.id/community/media/visual/2024/02/05/kepala-bps-provinsi-bali-endang-retno-sri-subiyandani_169.jpeg?w=700&q=90" class="w-[700px] h-[320px] object-cover" alt="thumbnail">
+                    <div class="absolute bottom-0 left-0 z-20 p-10 flex flex-col gap-5">
+                        <span class="text-gray-300">Sumber: <a target="_blank" href="https://www.detik.com/bali/bisnis/d-7328111/pengangguran-di-bali-turun-jadi-1-86-persen-jauh-di-bawah-nasional">detik.com</a></span>
+                        <h1 class="judul-berita text-xl text-[#f3f6f4] font-semibold">Pengangguran di Bali Turun Jadi 1,86 persen, Jauh di Bawah Nasional</h1>
+                        <p class=" text-gray-300">Badan Pusat Statistik (BPS) Bali mencatat tingkat pengangguran terbuka (TPT) di Bali pada Februari 2024 sebanyak 1,86 persen. Persentase jumlah TPT Februari 2024 turun dibandingkan Februari 2023 sebesar 3,73 persen.</p>
+                        <a class=" text-gray-300 flex items-center gap-3" target="_blank" href="https://www.detik.com/bali/bisnis/d-7328111/pengangguran-di-bali-turun-jadi-1-86-persen-jauh-di-bawah-nasional">Baca selengkapnya... <img src="/Pictures/arrow.png" alt="arrow" width="25" height="25"></a>    
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- SECTION TABLE -->
-        <div class="bg-white my-20 rounded-xl py-10 px-5">
+        <div class="bg-white my-20 rounded-xl py-10 px-5" id="past">
             <div class="flex flex-col items-center justify-center gap-5">
                 <h1 class="bg-[#5C5485] px-5 py-2 rounded-xl text-3xl font-semibold text-white">Data Pengangguran</h1>
                 <table class="border-2 border-[#2D3142] rounded-xl" id="DataPengangguran" border="1"></table>
@@ -70,11 +119,11 @@
                 <div class="flex flex-col gap-10">
                 <div class="flex gap-5">
                     <div>
-                    <p class="text-gray-700">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam enim cum dolore in architecto. Aut neque modi saepe ea eligendi quod voluptatibus cupiditate error nobis accusamus rem dolore, nesciunt praesentium? Dolores fugit accusamus atque nobis, facilis quae dolor magni iste, libero aut itaque doloribus, quas sint odit modi earum aperiam.</p>
+                    <p class="text-gray-700">Analisis peramalan angka pengangguran tahun 2023 dengan metode secant menunjukkan hasil yang positif dengan adanya penurunan angka pengangguran. Hal ini mengindikasikan kemungkinan adanya perbaikan dalam kondisi ketenagakerjaan pada tahun tersebut. Penurunan angka pengangguran dapat berdampak positif pada ekonomi secara keseluruhan dengan meningkatkan tingkat konsumsi dan produktivitas, serta mengurangi beban sosial dan ekonomi yang ditanggung oleh individu yang menganggur.</p>
                     <!-- <img src="/Pictures/sou - Copy.png" alt="pict1"> -->
                     </div>
                     <div>
-                    <p class="text-gray-700">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam enim cum dolore in architecto. Aut neque modi saepe ea eligendi quod voluptatibus cupiditate error nobis accusamus rem dolore, nesciunt praesentium? Dolores fugit accusamus atque nobis, facilis quae dolor magni iste, libero aut itaque doloribus, quas sint odit modi earum aperiam.</p>
+                    <p class="text-gray-700">Hasil peramalan yang menunjukkan penurunan angka pengangguran juga dapat menjadi sinyal bagi kebijakan pemerintah dan pelaku ekonomi untuk terus mendorong pertumbuhan ekonomi yang berkelanjutan dan menciptakan lapangan kerja baru. Langkah-langkah kebijakan yang mendukung investasi, pendidikan dan pelatihan tenaga kerja, serta pembangunan infrastruktur dapat menjadi strategi untuk memperkuat dampak positif dari penurunan angka pengangguran ini dan memastikan pertumbuhan ekonomi yang inklusif dan berkelanjutan.</p>
                     <!-- <img src="/Pictures/VL.png" alt="pict2"> -->
                     </div>
                 </div>
