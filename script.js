@@ -129,11 +129,11 @@ fetch('data.xlsx')
     const myChart2 = new Chart(ctx2, {
       type: 'line', // Jenis grafik adalah garis
       data: {
-        labels: ['2022', 'Target', 'Target Prediksi', 'Prediksi'], // Label sumbu x
+        labels: ['2020', '2021', '2022', '2023 / Prediksi'], // Label sumbu x
         datasets: [
           {
           label: 'Jumlah',
-          data: [8425931, 3.42484, 3.42484, 8250899], // Data untuk sumbu y
+          data: [9767754, 8425931, 8425931, 8250899], // Data untuk sumbu y
           borderColor: 'rgba(255, 150, 124, 1)', // Warna garis
           borderWidth: 2, // Lebar garis
           fill: true, // Apakah area di bawah garis akan diisi warna
