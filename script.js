@@ -1,4 +1,4 @@
-// Ini Data Pengangguran Bang
+// Ini Data Pengangguran
 fetch('data.xlsx')
   .then((response) => response.arrayBuffer())
   .then((data) => {
